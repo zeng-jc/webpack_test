@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+  </div>
+  <!-- 
+    webpack就是对代码进行打包，生成游览器容易识别的代码（如scss转css，es6转es5，typescript转JavaScript等等），
+    webpack的核心是让我们可以进行模块化开发，并且会帮助我们处理模块间的依赖关系。
+    项目写完后使用webpack对项目进行模块化打包
+    webpack依赖node.js环境
+   -->
+
+   <!-- 
+     执行 webpack ./src/main.js ./dist/bundle.js 将代码进行打包处理
+     将main.js及其依赖的文件通过webpack打包到dist目录下的bundle.js文件中
+     webpack会自动的将main.js所依赖的所有文件都打包到bundle.js文件中
+    -->
+
+    <!-- 
+      1、将webpack指令 映射到 npm run 的指令中
+      2、run 什么就执行配置文件中script中对应的脚本
+      3、所以我们可以直接在配置文件的脚本中写入：build:"webpack"
+      4、还有使用 npm run build 会优先找到当前项目中的webpack，而不是先找到全局的webpack
+      5、因为不同的项目使用的webpack版本不一致（也就是全局的webpack和当前项目需要使用的webpack版本不匹配）
+      6、而执行webpack都是优先找到全局的webpack，再拿来打包
+      7、所以本地也需要安装webpack，使用命令：npm install webpack@3.6.0 --save-dev 这样就下载了webpack并保存到了配置文件开发依赖中
+     -->
+
+   <script src="./dist/bundle.js"></script>
+</body>
+</html>

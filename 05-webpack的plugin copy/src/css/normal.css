@@ -1,0 +1,5 @@
+body{
+  /* background-color: aquamarine; */
+  background: url(../img/kd.jpg);
+  /* 图片大小如果符合要求则编译成base64文件 */
+}

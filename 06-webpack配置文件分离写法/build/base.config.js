@@ -1,3 +1,5 @@
+//注意分离写好后 需要手动配置package.json中的脚本
+
 const path = require('path');
 //vue-loader 版本过高需要依赖
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
@@ -10,7 +12,7 @@ module.exports = {
   entry: './src/main.js',
   //出口：为对象 path标识路径 filename标识文件名
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js',
     // publicPath: 'dist/',//只要是url的文件就会在前面添加这个路径
   },
@@ -68,8 +70,6 @@ module.exports = {
       },
     ],
   },
-  //打包但不压缩
-  mode: 'development',
   plugins: [
     new VueLoaderPlugin(),//vue-loader 版本过高需要配置
     //设置版权信息
@@ -88,11 +88,4 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js'
     }
   },
-  //给dist目录配置一个本地服务器
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 9000
-  }
-
 };

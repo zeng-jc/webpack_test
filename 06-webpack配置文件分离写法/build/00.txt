@@ -1,0 +1,10 @@
+公共的配置放入到： base.config.js
+开发时依赖的配置放入： dev.config.js 
+生产时依赖的配置放入：pro.config.js
+
+合并配置文件需要装 webpack-merge
+npm install webpack-merge --save-dev
+
+合并思路：
+1.打包代码时 需要合并base.config.js与dev.config.js
+2.生产时代码时 需要合并base.config.js与prod.config.js
